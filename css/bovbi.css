@@ -71,6 +71,17 @@ header.carousel .fill {
 
 footer {
     margin: 50px 0;
+    display: inline-block;
+}
+
+footer img{
+  width: 71px;
+  height: 32px;
+  padding-top: 0 5px;
+  margin-top: 5px;
+}
+.credits-fmm{
+    vertical-align: bottom !important;
 }
 
 /* Responsive Styles */

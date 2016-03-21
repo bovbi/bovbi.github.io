@@ -165,39 +165,39 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Welcome to Modern Business
+                    Explore seus dados
                 </h1>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                        <h4><i class="glyphicon glyphicon-dashboard"></i> Painéis Gráficos</h4>
                     </div>
                     <div class="panel-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                        <a href="#" class="btn btn-default">Leia mais</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                        <h4><i class="glyphicon glyphicon-th-list"></i> Relatórios Customizados</h4>
                     </div>
                     <div class="panel-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                        <a href="#" class="btn btn-default">Leia mais</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                        <h4><i class="glyphicon glyphicon-zoom-in"></i> Análises OLAP</h4>
                     </div>
                     <div class="panel-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                        <a href="#" class="btn btn-default">Leia mais</a>
                     </div>
                 </div>
             </div>
@@ -207,7 +207,7 @@
         <!-- Portfolio Section -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Portfolio Heading</h2>
+                <h2 class="page-header">Indicadores de mercado</h2>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
@@ -245,23 +245,36 @@
         <!-- Features Section -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Modern Business Features</h2>
+                <h2 class="page-header">Gostaria de ver mais?</h2>
             </div>
             <div class="col-md-6">
-                <p>The Modern Business template by Start Bootstrap includes:</p>
+                <p>Preencha o formulário ao lado para que possamos lhe enviar suas credencias de acesso a nossa demo online.</p>
+                <p>Na nossa demo online você irá conhecer as principais funcionalidades que proporcionamos aos usuários.</p>
                 <ul>
-                    <li><strong>Bootstrap v3.2.0</strong>
-                    </li>
-                    <li>jQuery v1.11.0</li>
-                    <li>Font Awesome v4.1.0</li>
-                    <li>Working PHP contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                    <li>17 HTML pages</li>
+                    <li>Análises OLAP</li>
+                    <li>Painéis gráficos</li>
+                    <li>Relatórios Customizados</li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
             </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+            <div class="col-md-6 well">
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Nome Completo:</label>
+                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->
@@ -282,11 +295,107 @@
 
         <hr>
 
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Map Column -->
+                <div class="col-xs-12">
+                    <!-- Embedded GeoChart Map -->
+                    <div id="address-geochart-div" style="height: 400px;"></div>
+                </div>
+                <!-- Contact Details Column -->
+                <div class="col-xs-12">
+                    <h3>Contato</h3>
+                    <div class="row">
+                        <p class="col-xs-6">
+                            Rua Inácio de Souza, 723<br>Campo Grande - MS, CEP 79041-220<br>
+                        </p>
+                        <p class="col-xs-6">
+                            Rua Antônio João, 2523<br>Ponta Porã - MS, CEP 79904-556<br>
+                        </p>
+                    </div>
+                    <p><i class="fa fa-phone"></i> 
+                        <abbr title="Phone">P</abbr>: (67) 3431-8927 | (67) 9636-8413</p>
+                    <p><i class="fa fa-envelope-o"></i> 
+                        <abbr title="Email">E</abbr>: <a href="mailto:contato.bovbi@gmail.com">contato.bovbi@gmail.com</a>
+                    </p>
+                    <p><i class="fa fa-clock-o"></i> 
+                        <abbr title="Hours">H</abbr>: Segunda - Sexta: 8:00 às 18:00</p>
+                    <ul class="list-unstyled list-inline list-social-icons">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+          <div class="col-md-4 well">
+                <h3>Envie-nos uma mensagem</h3>
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Nome:</label>
+                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Empresa:</label>
+                            <input type="text" class="form-control" id="company" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Telefone:</label>
+                            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Mensagem:</label>
+                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- /.row -->
+        
+
+        <hr>
+
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <a 
+                        href="http://fernandomaia.eti.br" 
+                        title="Maia Informática - Serviços em Business Intelligence" 
+                        target="no_blank">
+                        <img src="img/fmm_logo.png">
+                    </a>
+                    <label class="credits-fmm"> 2016 &copy; Maia Informática - <i>Serviços em Business Intelligence</i></label>
                 </div>
             </div>
         </footer>
@@ -295,17 +404,20 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="libs/jquery/js/jquery.js"></script>
+    <script src="libs/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- GeoChart JavaScript -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
+    <!-- javascript custom -->
+    <script src="js/bovbi.js"></script>
+
+    
+    
 
 </body>
 
