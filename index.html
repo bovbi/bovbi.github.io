@@ -49,67 +49,31 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="#sobre">Sobre</a>
                     </li>
                     <li>
-                        <a href="services.html">Services</a>
+                        <a href="#como-funciona">Como funciona</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="#contact">Contato</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-item.html">Single Portfolio Item</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="#portfolio">Clientes</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.html">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.html">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="full-width.html">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href="sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="404.html">404</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">Pricing Table</a>
-                            </li>
-                        </ul>
+                    
+                    <li class="pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
+
+                            <div class="dropdown-menu" style="padding: 15px;">
+                                <form method="post" action="http://demo.bovbi.com.br/demo/j_spring_security_check" target="no_blank">
+                                    <input style="margin-bottom: 15px;" type="text" placeholder="Usuário" name="j_username">
+                                    <input style="margin-bottom: 15px;" type="password" placeholder="Senha" name="j_password">
+
+                                    <input class="btn btn-primary btn-block" type="submit" id="login" value="Login">
+                                </form>
+                            </div>
+                        </li>
                     </li>
                 </ul>
             </div>
@@ -118,63 +82,38 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
+    <!-- Page introduction -->
+    <div id="sobre" class="container lead well">
+        <!-- Marketing Icons Section -->
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>
+                    Bov BI é um serviço que proporciona as pessoas do <strong>Agronegócio</strong>, uma maneira simples e eficaz de <strong>análisar</strong> seus dados.
+                </h3>
             </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </header>
+        <hr>
+    </div>
 
     <!-- Page Content -->
-    <div class="container">
+    <div id="como-funciona" class="container">
 
         <!-- Marketing Icons Section -->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Explore seus dados
+                    Como funciona?
                 </h1>
+                <p>O acesso a informação ou ao dado propriamente dito, ocorre em três formas:</p>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-dashboard"></i> Painéis Gráficos</h4>
+                        <h4><img src="img/icon/table.png" class="icon"> Análises OLAP</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <p><strong>OLAP</strong> do Inglês <i>Online analytical processing</i> é uma tecnologia que proporciona aos usuários a geração de relatórios simples ou complexos de forma dinâmica, outra importante caracterísitica é a possíbilidade de cruzamento de várias dados.</p>
                         <a href="#" class="btn btn-default">Leia mais</a>
                     </div>
                 </div>
@@ -182,10 +121,10 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-th-list"></i> Relatórios Customizados</h4>
+                        <h4><img src="img/icon/dashboard.png" class="icon"> Painéis Gráficos</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <p><strong>Painéis</strong> ou no Inglês <i>Dashboards</i> são páginas Web com vários componentes gráficos que apresentam o dado em uma forma mais amigável para sua interpretação, além da possibilidade de inclusão de filtros pré-definidos.</p>
                         <a href="#" class="btn btn-default">Leia mais</a>
                     </div>
                 </div>
@@ -193,51 +132,13 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-zoom-in"></i> Análises OLAP</h4>
+                        <h4><img src="img/icon/report.png" class="icon">Relatórios Customizados</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <p><strong>Relatórios</strong> ou no Inglês <i>Reports</i> são relatórios pré-definidos em formato html, PDF, Excel, entre outros. Nesta forma de visualização de dados também é possível incluir filtros, além do agendamento de envio por email.</p>
                         <a href="#" class="btn btn-default">Leia mais</a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Indicadores de mercado</h2>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
             </div>
         </div>
         <!-- /.row -->
@@ -249,12 +150,7 @@
             </div>
             <div class="col-md-6">
                 <p>Preencha o formulário ao lado para que possamos lhe enviar suas credencias de acesso a nossa demo online.</p>
-                <p>Na nossa demo online você irá conhecer as principais funcionalidades que proporcionamos aos usuários.</p>
-                <ul>
-                    <li>Análises OLAP</li>
-                    <li>Painéis gráficos</li>
-                    <li>Relatórios Customizados</li>
-                </ul>
+                <p>Em nossa demo online você irá conhecer as principais funcionalidades que proporcionamos aos usuários.
             </div>
             <div class="col-md-6 well">
                 <form name="sentMessage" id="contactForm" novalidate>
@@ -279,33 +175,37 @@
         </div>
         <!-- /.row -->
 
-        <hr>
-
-        <!-- Call to Action Section -->
-        <div class="well">
-            <div class="row">
-                <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-                </div>
-                <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
-                </div>
+        <!-- Portfolio Section -->
+        <div id="portfolio" class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Quem já esta usando</h2>
+            </div>
+            <div class="col-lg-12 portfolio">
+                <a href="http://novilhoms.com.br" target="no_blank">
+                    <img class="img-responsive img-portfolio img-hover logo-novilhoms" src="img/novilhoms.png" alt="">
+                </a>
+                <a href="http://beeftec.com.br" target="no_blank">
+                    <img class="img-responsive img-portfolio img-hover logo-beeftec" src="img/beeftec.png" alt="">
+                </a>
             </div>
         </div>
-
-        <hr>
+        <!-- /.row -->
 
         <!-- Content Row -->
-        <div class="row">
+        <div id="contact" class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Contato</h2>
+            </div>
             <div class="col-md-8">
                 <!-- Map Column -->
                 <div class="col-xs-12">
                     <!-- Embedded GeoChart Map -->
-                    <div id="address-geochart-div" style="height: 400px;"></div>
+                    <div id="address-geochart-div" class="hidden-xs hidden-sm" style="height: 400px;"></div>
+                    <div id="address-geochart-mobile-div" class="hidden-md hidden-lg" style="height: 200px;"></div>
                 </div>
                 <!-- Contact Details Column -->
                 <div class="col-xs-12">
-                    <h3>Contato</h3>
+                    <h3>Endereços</h3>
                     <div class="row">
                         <p class="col-xs-6">
                             Rua Inácio de Souza, 723<br>Campo Grande - MS, CEP 79041-220<br>
@@ -323,24 +223,28 @@
                         <abbr title="Hours">H</abbr>: Segunda - Sexta: 8:00 às 18:00</p>
                     <ul class="list-unstyled list-inline list-social-icons">
                         <li>
-                            <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                            <a href="http://www.facebook.com/bovbi" target="no_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
                         </li>
+                        <!--
                         <li>
-                            <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                            <a href="#" target="no_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
                         </li>
+                        -->
                         <li>
-                            <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+                            <a href="http://twitter.com/agro_bovbi" target="no_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
                         </li>
+                        <!--
                         <li>
                             <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
                         </li>
+                        -->
                     </ul>
                 </div>
             </div>
 
-          <div class="col-md-4 well">
+          <div class="col-md-4">
                 <h3>Envie-nos uma mensagem</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form name="sentMessage" id="contactForm" novalidate class="well">
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Nome:</label>
@@ -370,7 +274,7 @@
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Mensagem:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <textarea rows="7" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
                     <div id="success"></div>
@@ -381,11 +285,11 @@
 
         </div>
         <!-- /.row -->
-        
 
-        <hr>
+    </div>
+    <!-- /.container -->
 
-        <!-- Footer -->
+    <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -393,15 +297,12 @@
                         href="http://fernandomaia.eti.br" 
                         title="Maia Informática - Serviços em Business Intelligence" 
                         target="no_blank">
-                        <img src="img/fmm_logo.png">
+                        <img src="img/fmm_logo_white.png">
                     </a>
-                    <label class="credits-fmm"> 2016 &copy; Maia Informática - <i>Serviços em Business Intelligence</i></label>
+                    <span class="credits-fmm"> 2016 &copy; Maia Informática - Serviços em Business Intelligence</span>
                 </div>
             </div>
         </footer>
-
-    </div>
-    <!-- /.container -->
 
     <!-- jQuery -->
     <script src="libs/jquery/jquery.js"></script>

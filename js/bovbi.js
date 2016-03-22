@@ -31,6 +31,8 @@ function drawAddressMap() {
 	};
 
 	var chart = new google.visualization.GeoChart(document.getElementById('address-geochart-div'));
+	var chartMobile = new google.visualization.GeoChart(document.getElementById('address-geochart-mobile-div'));
 
 	chart.draw(data, options);
+	chartMobile.draw(data, options);
 }

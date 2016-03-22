@@ -15,8 +15,26 @@ body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+#sobre, #como-funciona, #quem-esta-usando, #portfolio, #contato{
+    padding-top: 10px; 
+}
+
+.portfolio a{
+    display: inline-block;
+    padding-right:  20px;
+}
 .img-portfolio {
     margin-bottom: 30px;
+}
+
+.logo-novilhoms {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-beeftec {
+    width: 250px;
+    height: 75px;
 }
 
 .img-hover:hover {
@@ -42,11 +60,27 @@ header.carousel .fill {
     background-size: cover;
 }
 
+.lead{
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+}
+    
+
 /* 404 Page Styles */
 
 .error-404 {
     font-size: 100px;
 }
+
+
 
 /* Pricing Page Styles */
 
@@ -70,8 +104,13 @@ header.carousel .fill {
 /* Footer Styles */
 
 footer {
-    margin: 50px 0;
+    padding: 50px 0;
     display: inline-block;
+    width: 100%;
+    background-color: #393939;
+    border-color: #393939;
+    color: #ffffff;
+    text-align: center;
 }
 
 footer img{
@@ -102,3 +141,4 @@ footer img{
         height: 70%;
     }
 }
+
