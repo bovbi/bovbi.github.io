@@ -153,24 +153,28 @@
                 <p>Em nossa demo online você irá conhecer as principais funcionalidades que proporcionamos aos usuários.
             </div>
             <div class="col-md-6 well">
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form 
+                    action="https://formspree.io/contato.bovbi@gmail.com" 
+                    method="POST"
+                    novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Nome Completo:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <input type="text" class="form-control" name="name" required data-validation-required-message="Por favor informe seu nome.">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Email:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                            <input type="email" class="form-control" name="_replyto" required data-validation-required-message="Por favor informe seu email.">
                         </div>
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
+
             </div>
         </div>
         <!-- /.row -->
