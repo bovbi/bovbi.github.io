@@ -73,7 +73,6 @@ header.carousel .fill {
     height: 32px;
 }
     
-
 /* 404 Page Styles */
 
 .error-404 {
@@ -104,7 +103,7 @@ header.carousel .fill {
 /* Footer Styles */
 
 footer {
-    padding: 50px 0;
+    padding: 15px 0;
     display: inline-block;
     width: 100%;
     background-color: #393939;
@@ -119,6 +118,7 @@ footer img{
   padding-top: 0 5px;
   margin-top: 5px;
 }
+
 .credits-fmm{
     vertical-align: bottom !important;
 }
