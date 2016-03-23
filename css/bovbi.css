@@ -135,6 +135,10 @@ footer img{
 	border-color: #CC3237;
 }
 
+.form-control:focus {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(237, 50, 55, .6);
+}
+
 /* Responsive Styles */
 
 @media(max-width:991px) {
