@@ -130,6 +130,11 @@ footer img{
 	border-color: #EE3237;
 }
 
+.btn-primary:hover {
+	background-color: #DC3237;
+	border-color: #CC3237;
+}
+
 /* Responsive Styles */
 
 @media(max-width:991px) {
