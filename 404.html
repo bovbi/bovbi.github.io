@@ -42,73 +42,41 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand hidden-md hidden-lg" href="index.html">Bov BI - <small>BI para o Agronegócio</small></a>
+                <a class="navbar-brand hidden-xs hidden-sm" href="index.html">Bov BI - Business Intelligence para o Agronegócio</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="index.html#sobre">Sobre</a>
                     </li>
                     <li>
-                        <a href="services.html">Services</a>
+                        <a href="index.html#como-funciona">Como funciona</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="index.html#planos">Planos</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-item.html">Single Portfolio Item</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="index.html#contact">Contato</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.html">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.html">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="index.html#portfolio">Clientes</a>
                     </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="full-width.html">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href="sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">FAQ</a>
-                            </li>
-                            <li class="active">
-                                <a href="404.html">404</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">Pricing Table</a>
-                            </li>
-                        </ul>
+                    
+                    <li class="pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
+
+                            <div class="dropdown-menu" style="padding: 15px;">
+                                <form method="post" action="http://demo.bovbi.com.br/demo/j_spring_security_check" target="no_blank">
+                                    <input style="margin-bottom: 15px;" class="form-control" type="text" placeholder="Usuário" name="j_username">
+                                    <input style="margin-bottom: 15px;" class="form-control" type="password" placeholder="Senha" name="j_password">
+
+                                    <input class="btn btn-primary btn-block" type="submit" id="login" value="Login">
+                                </form>
+                            </div>
+                        </li>
                     </li>
                 </ul>
             </div>
@@ -148,26 +116,23 @@
 
         </div>
 
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a 
-                        href="http://fernandomaia.eti.br" 
-                        title="Maia Informática - Serviços em Business Intelligence" 
-                        target="no_blank">
-                        <img src="img/fmm_logo.png">
-                    </a>
-                    <label class="credits-fmm"> 2016 &copy; Maia Informática - <i>Serviços em Business Intelligence</i></label>
-                </div>
-            </div>
-        </footer>
-
     </div>
     <!-- /.container -->
 
+    <footer>
+        <div class="">
+            <div class="col-lg-12">
+                <a 
+                    href="http://fernandomaia.eti.br" 
+                    title="Maia Informática - Serviços em Business Intelligence" 
+                    target="no_blank">
+                    <img src="img/fmm_logo_white.png"> 
+                </a>
+                <span class="credits-fmm"> 2016 &copy; Maia Informática - Serviços em Business Intelligence</span>
+            </div>
+        </div>
+    </footer>
+    
     <!-- jQuery -->
     <script src="libs/jquery/jquery.js"></script>
 
