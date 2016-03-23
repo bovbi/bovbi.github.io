@@ -123,6 +123,12 @@ footer img{
     vertical-align: bottom !important;
 }
 
+/* Change Bootstrap */
+
+.btn-primary {
+	background-color: #ED3237;
+}
+
 /* Responsive Styles */
 
 @media(max-width:991px) {
