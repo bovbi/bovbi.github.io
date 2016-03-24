@@ -39,7 +39,7 @@ function drawAddressMap() {
 
 // Efeito deslizante na tela 
 $(document).ready(function(e){
-    $(".nav a").click(function (event) {
+    $(".nav a, #titulo").click(function (event) {
         event.preventDefault();
         $('html, body').animate({ scrollTop: $($(this).attr("href")).offset().top }, 'slow');
     });
