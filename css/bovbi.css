@@ -126,13 +126,15 @@ footer img{
 /* Change Bootstrap */
 
 .btn-primary {
-	background-color: #ED3237;
-	border-color: #EE3237;
+	background-color: #ED3237 !important;
+	border-color: #EE3237 !important;
 }
 
-.btn-primary:hover {
-	background-color: #DC3237;
-	border-color: #CC3237;
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary::selection{
+	background-color: #DC3237 !important;
+	border-color: #CC3237 !important;
 }
 
 .form-control:focus {
