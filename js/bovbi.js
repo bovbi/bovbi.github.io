@@ -35,4 +35,12 @@ function drawAddressMap() {
 
 	chart.draw(data, options);
 	chartMobile.draw(data, options);
-}
+};
+
+// Efeito deslizante na tela 
+$(document).ready(function(e){
+    $(".nav a").click(function (event) {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: $($(this).attr("href")).offset().top }, 'slow');
+    });
+});
