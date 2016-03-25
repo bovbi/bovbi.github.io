@@ -16,7 +16,7 @@ body {
 }
 
 #sobre, #como-funciona, #quem-esta-usando, #portfolio, #contato, #planos, #demo{
-    padding-top: 15px; 
+    padding-top: 1.5em; 
 }
 
 .portfolio a{
@@ -124,6 +124,28 @@ footer img{
 }
 
 /* Change Bootstrap */
+
+.panel-primary,
+.panel-primary > .panel-heading {
+    border-color: #ED3237 !important;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #ED3237 !important;
+}
+
+.panel-heading > .panel-title {
+    font-weight: 700 !important;
+}
+
+.panel-primary .label-success {
+    background-color: white !important;
+    color: #ED3237 !important;
+}
+
+.panel-primary .list-group-item {
+    border-color: #ED3237;
+}
 
 .btn-primary {
 	background-color: #ED3237 !important;
