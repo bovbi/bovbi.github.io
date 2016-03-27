@@ -21,7 +21,7 @@ function getDataBeefradarGauge(){
             renderBeefradarGauge(data.data);
             var inicio = data.data[0].inicio;
             var fim = data.data[0].fim;
-            console.log(data.data[0]);
+            
             $('#beefradar-inicio').text(inicio);
             $('#beefradar-fim').text(fim);
         }
@@ -209,7 +209,13 @@ function renderBeefradarBoxPlot(data){
 
         yAxis: {
             title: {
-                text: 'Valor @ em R$'
+                text: 'Valor @'
+            },
+            labels: {
+                formatter: function () {
+                    //console.log(this);
+                    return 'R$ ' + Highcharts.numberFormat(this.value,2);
+                }
             }
         },
         series: series
@@ -280,6 +286,12 @@ function renderBeefradarBarWeek(data){
             min: 0,
             title: {
                 text: 'Valor @ em R$'
+            },
+            labels: {
+                formatter: function () {
+                    //console.log(this);
+                    return 'R$ ' + Highcharts.numberFormat(this.value,2);
+                }
             }
         },
         tooltip: {
