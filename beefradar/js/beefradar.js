@@ -19,6 +19,11 @@ function getDataBeefradarGauge(){
         data: {t : d.getTime()},
         success: function(data){
             renderBeefradarGauge(data.data);
+            var inicio = data.data[0].inicio;
+            var fim = data.data[0].fim;
+            console.log(data.data[0]);
+            $('#beefradar-inicio').text(inicio);
+            $('#beefradar-fim').text(fim);
         }
     });
 }
