@@ -61,7 +61,8 @@ function renderBeefradarGauge(data){
                     dataLabels: {
                         enabled: true,
                         formatter: function() {
-                            return this.key + ' '+this.percentage + '%';
+                            console.log(this);
+                            return this.key + ' '+this.percentage.toFixed(0) + '%';
                         },
                         distance: -50,
                         style : {"color": "contrast", "fontSize": "14px", "fontWeight": "bold", "textShadow": "0 0 6px contrast, 0 0 3px contrast" }
