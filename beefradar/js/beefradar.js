@@ -1,5 +1,13 @@
 $( document ).ready(function() {
-    getDataBeefradarGauge()
+    getDataBeefradarGauge();
+    getDataBeefradarBarWeek();
+
+    Highcharts.setOptions({
+        lang: {
+            decimalPoint: ',',
+            thousandsSep: '.'
+        }
+    });
 
 });
 
@@ -11,6 +19,19 @@ function getDataBeefradarGauge(){
         data: {t : d.getTime()},
         success: function(data){
             renderBeefradarGauge(data.data);
+        }
+    });
+}
+
+function getDataBeefradarBarWeek(){
+    var d = new Date();
+    $.ajax({
+        dataType: "json",
+        url: "datasource/sheet_precos.js",
+        data: {t : d.getTime()},
+        success: function(data){
+            renderBeefradarBarWeek(data.data);
+            renderBeefradarBoxPlot(data.data)
         }
     });
 }
@@ -38,34 +59,34 @@ function renderBeefradarGauge(data){
             text: 'Status Beef Radar'
         },
         subtitle: {
-            text: 'Fonte: Esalq/BMF'
+            text: 'Fonte: NF2R'
         },
-            credits: {
-                enabled: true,
-                href: "http://www.bovbi.com.br",
-                text: "bovbi.com.br"
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: false
-                    },
-                    showInLegend: false
+        credits: {
+            enabled: true,
+            href: "http://www.bovbi.com.br",
+            text: "bovbi.com.br"
+        }, 
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
                 },
-                series: {
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function() {
-                            console.log(this);
-                            return this.key + ' '+this.percentage.toFixed(0) + '%';
-                        },
-                        distance: -50,
-                        style : {"color": "contrast", "fontSize": "14px", "fontWeight": "bold", "textShadow": "0 0 6px contrast, 0 0 3px contrast" }
+                showInLegend: false
+            },
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    formatter: function() {
+                        //console.log(this);
+                        return this.key + ' '+this.percentage.toFixed(0) + '%';
+                    },
+                    distance: -50,
+                    style : {"color": "contrast", "fontSize": "14px", "fontWeight": "bold", "textShadow": "0 0 6px contrast, 0 0 3px contrast" }
                         //color:'white'
                     }
                 }
@@ -77,118 +98,189 @@ function renderBeefradarGauge(data){
         });
 }
 
-$('#beefradar-box-plot').highcharts({
+//Box Plot automatized functions
+//source: http://stackoverflow.com/questions/30893443/highcharts-boxplots-how-to-get-five-point-summary
+//get any percentile from an array
+function getPercentile(data, percentile) {
+    data.sort(numSort);
+    var index = (percentile/100) * data.length;
+    var result;
+    if (Math.floor(index) == index) {
+         result = (data[(index-1)] + data[index])/2;
+    }
+    else {
+        result = data[Math.floor(index)];
+    }
+    return result;
+}
+//because .sort() doesn't sort numbers correctly
+function numSort(a,b) { 
+    return a - b; 
+} 
 
+//wrap the percentile calls in one method
+function getBoxValues(data) {
+    var boxValues = [];
+    boxValues.push(Math.min.apply(Math,data));
+    boxValues.push(getPercentile(data, 25));
+    boxValues.push(getPercentile(data, 50));
+    boxValues.push(getPercentile(data, 75));
+    boxValues.push(Math.max.apply(Math,data));
+    return boxValues;
+}
+//end Box Plot automatized functions
+
+function renderBeefradarBoxPlot(data){
+    var series=[];
+    var estatistics=[];
+    var apelidos=[];
+    
+    $.each(data, function( index, value ) {
+        apelidos.push(value.apelido);
+    });
+    apelidos = removeDuplicateValuesInArray(apelidos);
+
+    $.each(apelidos, function( index, value ) {
+        var name = value;
+        var array = [];
+        $.each(data, function( index, value ) {
+            value.apelido === name ? array.push(value.valor) : '';
+        });
+        
+        estatistics.push(getBoxValues(array));
+
+    });
+    
+    series = [{ 
+        name : "Estatísticas",
+        data : estatistics,
+        tooltip: {
+               headerFormat: '<em>{point.key}</em><br/>'
+        }
+    }];
+
+    $('#beefradar-box-plot').highcharts({
         chart: {
             type: 'boxplot'
         },
 
         title: {
-            text: 'Highcharts Box Plot Example'
+            text: 'ESTATÍSTICAS DO PERÍODO'
+        },
+
+        subtitle: {
+            text: 'Fonte: Esalq/BMF'
+        },
+
+        credits: {
+            enabled: true,
+            href: "http://www.bovbi.com.br",
+            text: "bovbi.com.br"
         },
 
         legend: {
             enabled: false
         },
 
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat:
+                              'Máximo: {point.high}<br/>' +
+                              'Quartil superior: {point.q3}<br/>' +
+                              'Mediana: {point.median}<br/>' +
+                              'Quartil inferior: {point.q1}<br/>' +
+                              'Mínino: {point.low}<br/>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+
         xAxis: {
-            categories: ['1', '2', '3', '4', '5'],
+            categories: apelidos,
             title: {
-                text: 'Experiment No.'
+                text: 'Mercadoria'
             }
         },
 
         yAxis: {
             title: {
-                text: 'Observations'
-            },
-            plotLines: [{
-                value: 932,
-                color: 'red',
-                width: 1,
-                label: {
-                    text: 'Theoretical mean: 932',
-                    align: 'center',
-                    style: {
-                        color: 'gray'
-                    }
-                }
-            }]
+                text: 'Valor @ em R$'
+            }
         },
+        series: series
+    });
+}
 
-        series: [{
-            name: 'Observations',
-            data: [
-                [760, 801, 848, 895, 965],
-                [733, 853, 939, 980, 1080],
-                [714, 762, 817, 870, 918],
-                [724, 802, 806, 871, 950],
-                [834, 836, 864, 882, 910]
-            ],
-            tooltip: {
-                headerFormat: '<em>Experiment No {point.key}</em><br/>'
+function removeDuplicateValuesInArray(a) {
+    var seen = {};
+    var out = [];
+    var len = a.length;
+    var j = 0;
+    for(var i = 0; i < len; i++) {
+        var item = a[i];
+            if(seen[item] !== 1) {
+                seen[item] = 1;
+                out[j++] = item;
             }
-        }, {
-            name: 'Outlier',
-            color: Highcharts.getOptions().colors[0],
-            type: 'scatter',
-            data: [ // x, y positions where 0 is the first category
-                [0, 644],
-                [4, 718],
-                [4, 951],
-                [4, 969]
-            ],
-            marker: {
-                fillColor: 'white',
-                lineWidth: 1,
-                lineColor: Highcharts.getOptions().colors[0]
-            },
-            tooltip: {
-                pointFormat: 'Observation: {point.y}'
-            }
-        }]
+        }
+    return out;
+}
 
+function renderBeefradarBarWeek(data){
+    var series=[];
+    var categories=[];
+    var apelidos=[];
+    
+    $.each(data, function( index, value ) {
+        categories.push(value.data);
+        apelidos.push(value.apelido);
+    });
+    categories = removeDuplicateValuesInArray(categories);
+    apelidos = removeDuplicateValuesInArray(apelidos);
+
+    $.each(apelidos, function( index, value ) {
+        var name = value;
+        var array = [];
+        $.each(data, function( index, value ) {
+            value.apelido === name ? array.push(value.valor) : '';
+        });
+        
+        series[index] = { 
+            name : value,
+            data : array
+        };
     });
 
 
-
-$('#beefradar-bar').highcharts({
+    $('#beefradar-bar').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: 'Monthly Average Rainfall'
+            text: 'SEMANA DE PREÇOS'
         },
         subtitle: {
-            text: 'Source: WorldClimate.com'
+            text: 'Fonte: Esalq/BMF'
         },
+        credits: {
+            enabled: true,
+            href: "http://www.bovbi.com.br",
+            text: "bovbi.com.br"
+        }, 
         xAxis: {
-            categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
-            ],
+            categories:categories,
             crosshair: true
         },
         yAxis: {
             min: 0,
             title: {
-                text: 'Rainfall (mm)'
+                text: 'Valor @ em R$'
             }
         },
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>R$ {point.y}</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
@@ -196,24 +288,13 @@ $('#beefradar-bar').highcharts({
         plotOptions: {
             column: {
                 pointPadding: 0.2,
-                borderWidth: 0
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
             }
         },
-        series: [{
-            name: 'Tokyo',
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-
-        }, {
-            name: 'New York',
-            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-        }, {
-            name: 'London',
-            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-        }, {
-            name: 'Berlin',
-            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-        }]
+        series: series
     });
+}
