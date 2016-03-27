@@ -1,0 +1,24 @@
+body{
+    background-color:#69696f;
+    color:#fff;
+}
+.n2fr-logo {
+    height: 100px;
+}
+
+.header small{
+    display: inline-block;
+    color:#fff;
+    font-size: 12px;
+    float: right;
+    vertical-align: middle;
+    margin-top: 20px;
+}
+
+.header a{
+    color:#fff;
+}
+
+.img-thumbnail{
+    /*background-color: #606063;*/
+}
