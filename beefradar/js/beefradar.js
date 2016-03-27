@@ -285,7 +285,7 @@ function renderBeefradarBarWeek(data){
         yAxis: {
             min: 0,
             title: {
-                text: 'Valor @ em R$'
+                text: 'Valor @'
             },
             labels: {
                 formatter: function () {
