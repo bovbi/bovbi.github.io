@@ -191,9 +191,9 @@ function renderBeefradarBoxPlot(data){
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat:
                               'Máximo: {point.high}<br/>' +
-                              'Quartil superior: {point.q3}<br/>' +
+                              'Quartil 3: {point.q3}<br/>' +
                               'Mediana: {point.median}<br/>' +
-                              'Quartil inferior: {point.q1}<br/>' +
+                              'Quartil 1: {point.q1}<br/>' +
                               'Mínino: {point.low}<br/>',
             footerFormat: '</table>',
             shared: true,
