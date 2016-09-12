@@ -37,6 +37,11 @@ body {
     height: 75px;
 }
 
+.logo-informa-fnp {
+    width: 250px;
+    height: 100px;
+}
+
 .img-hover:hover {
     opacity: 0.8;
 }
