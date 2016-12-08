@@ -43,4 +43,6 @@ $(document).ready(function(e){
         event.preventDefault();
         $('html, body').animate({ scrollTop: $($(this).attr("href")).offset().top }, 'slow');
     });
+
+    $('.credits-fmm').empty().text( (new Date()).getFullYear()+ ' © Bov BI - Business Intelligence para seu Agronegócio');
 });
